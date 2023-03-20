@@ -1,0 +1,24 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "showDebuggerOutput": true,
+            "name": "Debug Local File",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "/Users/joe.cheng/cocoapods-debug",
+            "program": "/usr/local/lib/ruby/gems/3.0.0/bin/pod",
+            "args" : ["packagerthk","THKMacroKit.podspec","--force","--generate-spec","--spec-sources=https://github.com/CocoaPods/Specs.git,git@repo.we.com:iosfeaturelibraries/thkbusinesskitspecs.git,git@repo.we.com:ios/tspecsrepo.git"],
+            "useBundler": true,
+            "env": {
+                "PATH": "/usr/local/opt/ruby/bin:/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/joe.cheng/.rvm/bin",
+                "GEM_HOME": "/usr/local/lib/ruby/gems/3.0.0",
+                "GEM_PATH": "/usr/local/lib/ruby/gems/3.0.0",
+                "RUBY_VERSION": "ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-darwin19]"
+              }
+        }
+    ]
+}

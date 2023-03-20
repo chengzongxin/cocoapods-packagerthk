@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require 'pathname'
 ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 $:.unshift((ROOT + 'lib').to_s)
@@ -7,10 +10,7 @@ require 'bundler/setup'
 require 'bacon'
 require 'mocha-on-bacon'
 require 'pretty_bacon'
-require 'pathname'
 require 'cocoapods'
-
-Mocha::Configuration.prevent(:stubbing_non_existent_method)
 
 require 'cocoapods_plugin'
 
@@ -48,3 +48,32 @@ module Pod
 end
 
 #-----------------------------------------------------------------------------#
+
+module SpecHelper
+  def self.fixture(name)
+    Fixture.fixture(name)
+  end
+
+  def self.temporary_directory
+    ROOT + 'tmp'
+  end
+
+  module Fixture
+    ROOT = Pathname('fixtures').expand_path(__dir__)
+
+    def fixture(name)
+      ROOT + name
+    end
+    module_function :fixture
+  end
+end
+
+module Bacon
+  class Context
+    include SpecHelper::Fixture
+
+    def temporary_directory
+      SpecHelper.temporary_directory
+    end
+  end
+end
