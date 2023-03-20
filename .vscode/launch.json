@@ -11,7 +11,7 @@
             "request": "launch",
             "cwd": "/Users/joe.cheng/cocoapods-debug",
             "program": "/usr/local/lib/ruby/gems/3.0.0/bin/pod",
-            "args" : ["packagerthk","THKMacroKit.podspec","--force","--generate-spec","--spec-sources=https://github.com/CocoaPods/Specs.git,git@repo.we.com:iosfeaturelibraries/thkbusinesskitspecs.git,git@repo.we.com:ios/tspecsrepo.git"],
+            "args" : ["packagethk","THKMacroKit.podspec","--force","--generate-spec","--spec-sources=https://github.com/CocoaPods/Specs.git,git@repo.we.com:iosfeaturelibraries/thkbusinesskitspecs.git,git@repo.we.com:ios/tspecsrepo.git"],
             "useBundler": true,
             "env": {
                 "PATH": "/usr/local/opt/ruby/bin:/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/joe.cheng/.rvm/bin",
