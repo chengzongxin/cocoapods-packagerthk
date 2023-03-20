@@ -6,7 +6,7 @@ SKIP_UNRELEASED_VERSIONS = false
 def cp_gem(name, repo_name, branch = 'master', path: false)
   return gem name if SKIP_UNRELEASED_VERSIONS
   opts = if path
-           { :path => "../#{repo_name}" }
+           { :path => "./#{repo_name}" }
          else
            url = "https://github.com/chengzongxin/#{repo_name}.git"
            { :git => url, :branch => branch }
@@ -31,5 +31,5 @@ group :development do
   gem 'ruby-debug-ide'
   gem 'debase', '0.2.5.beta2'
   
-  cp_gem 'cocoapods-packagerthk',                'cocoapods-packagerthk',path: 'cocoapods-packagerthk'
+  # gem 'cocoapods-packagerthk', :path => "./cocoapods-packagerthk"
 end
