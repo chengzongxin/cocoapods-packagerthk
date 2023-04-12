@@ -300,7 +300,11 @@ MAP
     end
 
     def ios_build_options
-      "ARCHS=\'#{ios_architectures.join(' ')}\' OTHER_CFLAGS=\'-fembed-bitcode -Qunused-arguments\'"
+      # xcode14 打的包在xcode13上会无法运行，这里需要做下配置，添加 -fno-objc-msgsend-selector-stubs 参考 http://events.jianshu.io/p/cadf4ec9102b
+      # $(ARCHS_STANDARD) 使可以打全架构，否则xcode14 不支持armv7
+      "ARCHS=\'#{ios_architectures.join(' ')}\' OTHER_CFLAGS=\'-fembed-bitcode -Qunused-arguments -fno-objc-msgsend-selector-stubs\'"
+      
+      # "ARCHS=\'$(ARCHS_STANDARD)\' OTHER_CFLAGS=\'-fembed-bitcode -Qunused-arguments -fno-objc-msgsend-selector-stubs\'"
     end
 
     def ios_architectures
