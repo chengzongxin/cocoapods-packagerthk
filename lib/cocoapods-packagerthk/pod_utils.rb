@@ -31,6 +31,9 @@ module Pod
               config.build_settings['CLANG_MODULES_AUTOLINK'] = 'NO'
               config.build_settings['GCC_GENERATE_DEBUGGING_SYMBOLS'] = 'NO'
               config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+              config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
+              config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+              config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
             end
           end
           static_installer.pods_project.save
